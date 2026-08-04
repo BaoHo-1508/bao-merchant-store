@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Bao</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Bao — a modern online store. Browse the collection, check out securely, and manage your orders and subscriptions.">
+  <meta name="theme-color" content="#693EFE">
+  <meta name="color-scheme" content="light">
+
+  <!-- Favicons / app icons -->
+  <link rel="icon" type="image/svg+xml" href="assets/bao-mark.svg">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Social share (relative image resolved against the store origin at deploy) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Bao">
+  <meta property="og:title" content="Bao">
+  <meta property="og:description" content="A modern online store. Shop the collection at Bao.">
+  <meta property="og:image" content="assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Runtime deployment config: the container rewrites this file at startup
+       (ESTORE_APP_PUBLIC_URL). Must load before Angular. Do not inline a host. -->
+  <script src="assets/runtime-config.js"></script>
+
+  <!-- Self-hosted brand fonts (see styles-fonts.css). Preload the two faces used
+       on first paint so headings/body do not flash. crossorigin is required for
+       font preloads even though these are same-origin. -->
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-400-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-grotesk-700-latin.woff2" crossorigin>
+</head>
+<body>
+  <app-root>
+    <!-- Boot splash: replaced when Angular hydrates. Keeps the first paint
+         branded instead of a blank white screen. -->
+    <div class="app-loading" role="status" aria-live="polite">
+      <img class="app-loading-mark" src="assets/bao-mark.svg" width="56" height="56" alt="Loading Bao">
+      <span class="visually-hidden">Loading…</span>
+    </div>
+  </app-root>
+  <noscript>
+    <div style="max-width:32rem;margin:4rem auto;padding:0 1.25rem;font-family:system-ui,sans-serif;text-align:center;color:#141020;">
+      <h1 style="font-size:1.5rem;">JavaScript is required</h1>
+      <p>The Bao store needs JavaScript to load the catalogue and checkout. Please enable it in your browser and reload.</p>
+    </div>
+  </noscript>
+</body>
+</html>

@@ -1,0 +1,24 @@
+# Dependencies
+/node_modules
+
+# Build outputs
+/dist
+/tmp
+/out-tsc
+/bazel-out
+
+# Angular cache
+/.angular
+
+# Generated deployment secrets — never commit
+/.generated
+.env
+.env.*
+
+# Archives / OS / IDE noise
+*.zip
+.DS_Store
+Thumbs.db
+/.idea
+/.vscode
+*.swp

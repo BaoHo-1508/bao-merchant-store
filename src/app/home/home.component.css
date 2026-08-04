@@ -1,0 +1,121 @@
+.hero {
+  display: flex;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  /* Pull up behind the sticky header (~96px: 48px controls + 12px×2 inner
+     + 12px×2 outer padding) + page-shell top padding (1.25rem) so the
+     transparent header floats over the hero with no white gap on top. */
+  margin-top: calc(-98px - 1.25rem);
+  margin-bottom: 2.75rem;
+  min-height: 720px;
+  overflow: hidden;
+  color: var(--color-surface);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, .78) 100%),
+    radial-gradient(85% 75% at 10% 96%, rgba(var(--color-accent-rgb), .16), transparent 55%),
+    radial-gradient(120% 100% at 68% 26%, rgba(var(--color-brand-rgb), .6), transparent 55%),
+    linear-gradient(160deg, var(--color-hero-base), var(--color-fg) 72%);
+}
+
+.hero-inner {
+  flex: 1;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 110px 20px 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 640px;
+}
+
+.hero-title {
+  margin: 0;
+  font-size: clamp(2.75rem, 6vw, 4.25rem);
+  line-height: 1.03;
+  /* Light violet keeps the brand hue while clearing AA large-text contrast on
+     the dark hero (white text would be flatter). */
+  color: var(--color-brand-300);
+}
+
+.hero-tagline {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.55;
+  font-weight: 400;
+  color: rgba(255, 255, 255, .82);
+  max-width: 34rem;
+}
+
+.hero-cta {
+  flex-shrink: 0;
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 600;
+  padding: .85rem 1.6rem;
+}
+
+.hero-cta:hover {
+  background: var(--color-accent-strong);
+  color: var(--color-accent-ink);
+  box-shadow: 0 8px 24px rgba(var(--color-accent-rgb), .35);
+}
+
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+}
+
+.section-heading h2 {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.section-heading h2::before {
+  content: "";
+  width: 8px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--color-brand);
+}
+
+.product-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+@media (max-width: 1040px) {
+  .product-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 440px;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 90px 20px 28px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

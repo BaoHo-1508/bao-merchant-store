@@ -1,0 +1,23 @@
+Ping Business Merchant Store Vibe Coding Kit
+Copyright 2026 Ping Business and contributors.
+
+This product includes software developed for the Ping Business platform.
+
+--------------------------------------------------------------------------------
+Modifications
+--------------------------------------------------------------------------------
+
+This package is a customized ("Bao") derivative of the Ping Business
+merchant-store UI (Apache License 2.0, §4(b)). The Ping Business-originated
+files listed in MODIFICATIONS.md have been changed, and new brand assets,
+self-hosted OFL webfonts, and a footer component have been added. The
+customization is limited to presentation (brand tokens, typography, assets,
+copy, layout, accessibility). It does not modify the API contract, the runtime
+`ESTORE_APP_PUBLIC_URL` same-origin configuration, authentication/refresh, cart
+revalidation, checkout/subscription, or status-polling behavior.
+
+See MODIFICATIONS.md for the per-file change inventory and DESIGN_REPORT.md for
+details. "Ping Business" is a trademark of Ping Business; see TRADEMARKS.md. This
+customized deployment is not operated, certified, sponsored, or endorsed by Ping
+Business. Merchant-supplied and third-party assets retain their own ownership
+and license terms and are not relicensed.
