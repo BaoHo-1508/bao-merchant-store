@@ -48,8 +48,12 @@ export class SigninComponent implements OnInit {
       },
       error: err => {
         this.loading = false;
-        // 401 means bad credentials; the raw message is just "Unauthorized".
-        const message = err?.status === 401 ? 'Invalid email or password.' : apiErrorMessage(err);
+        // Bad credentials arrive either as 401, or as Keycloak's OAuth token
+        // response: HTTP 400 with { error: 'invalid_grant' }. Treat both as a
+        // friendly message instead of surfacing the raw OAuth error code.
+        const badCredentials = err?.status === 401
+          || (err?.status === 400 && err?.error?.error === 'invalid_grant');
+        const message = badCredentials ? 'Invalid email or password.' : apiErrorMessage(err);
         this.error = message;
         this.toast.show(message, 'error');
       }

@@ -95,11 +95,17 @@ export function apiErrorMessage(error: any): string {
     if (typeof error.error === 'string') {
       return error.error;
     }
-    if (error.error.error) {
-      return error.error.error;
+    // Prefer a human-readable description (e.g. Keycloak's OAuth
+    // `error_description`, "Invalid user credentials") over a raw machine
+    // code like "invalid_grant".
+    if (error.error.error_description) {
+      return error.error.error_description;
     }
     if (error.error.message) {
       return error.error.message;
+    }
+    if (error.error.error) {
+      return error.error.error;
     }
     if (error.error.raw) {
       return error.error.raw;

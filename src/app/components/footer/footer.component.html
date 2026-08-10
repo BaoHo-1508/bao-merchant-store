@@ -24,10 +24,14 @@
       <nav class="footer-col" aria-label="Account">
         <h2>Account</h2>
         <ul>
-          <li><a routerLink="/account">My account</a></li>
-          <li><a routerLink="/orders">Orders</a></li>
-          <li><a routerLink="/subscriptions">Subscriptions</a></li>
-          <li><a routerLink="/signin">Sign in</a></li>
+          <ng-container *ngIf="authState$ | async; else signedOut">
+            <li><a routerLink="/account">My account</a></li>
+            <li><a routerLink="/orders">Orders</a></li>
+            <li><a routerLink="/subscriptions">Subscriptions</a></li>
+          </ng-container>
+          <ng-template #signedOut>
+            <li><a routerLink="/signin">Sign in</a></li>
+          </ng-template>
         </ul>
       </nav>
     </div>
