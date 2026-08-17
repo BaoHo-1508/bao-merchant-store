@@ -80,6 +80,12 @@ export class EstoreApiService {
     return this.keycloak.get(this.url(`/order_item/${orderItemId}`)) as Observable<OrderItem>;
   }
 
+  cancelRecurring(orderItemId: number): Observable<OrderItem> {
+    return this.keycloak.post(
+      this.url(`/order_item/${encodeURIComponent(orderItemId)}/recurring/cancel`), {}
+    ) as Observable<OrderItem>;
+  }
+
 
   getPayments(params?: Record<string, any>): Observable<Payment[]> {
     return this.keycloak.get(this.url('/payments', params)) as Observable<Payment[]>;
