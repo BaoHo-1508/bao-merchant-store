@@ -13,6 +13,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { MessageComponent } from './components/message/message.component';
+import { PaymentMethodsComponent } from './components/payment-methods/payment-methods.component';
+import { StatusBannerComponent } from './components/status-banner/status-banner.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { HomeComponent } from './home/home.component';
@@ -36,6 +38,8 @@ import { SubscriptionCheckoutComponent } from './subscription-checkout/subscript
     HomeComponent,
     InputFieldComponent,
     MessageComponent,
+    PaymentMethodsComponent,
+    StatusBannerComponent,
     OrderDetailComponent,
     OrdersComponent,
     ProductCardComponent,
